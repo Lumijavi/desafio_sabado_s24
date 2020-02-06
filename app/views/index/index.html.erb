@@ -1,0 +1,23 @@
+<h1>Creador de color</h1>
+
+<input type="text" value="0" data-min="0" data-max="256" data-fgColor ="red" id="r" class="dial">
+<input type="text" value="0" data-min="0" data-max="256" data-fgColor ="green" id="g" class="dial">
+<input type="text" value="0" data-min="0" data-max="256" data-fgColor ="blue" id="b" class="dial">
+
+<h2>rgb(<span id="dred">0</span>, <span id="dgreen">0</span>, <span id="dblue">0</span>)</h2>
+
+<div class="contenedor" id="color"></div>
+
+<script>
+  $(function() {
+    $(".dial").knob({
+      'change': function() {
+        var color_rgb ='rgb(' + $('#r').val() + ',' + $('#g').val() + ',' + $('#b').val() + ')';
+        $('#color').css('background-color',color_rgb);
+        $('#dred').html($('#r').val());
+        $('#dgreen').html($('#g').val());
+        $('#dblue').html($('#b').val());
+      }
+    });
+  });
+</script>
